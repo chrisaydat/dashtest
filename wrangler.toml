@@ -1,0 +1,23 @@
+name = "hubtest"
+main = ".next/standalone/server.js"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "app"
+
+[site]
+bucket = ".next/static"
+entry-point = ".next/standalone/server.js"
+
+[env.production]
+workers_dev = true
+routes = [
+  { pattern = "*/*", zone_name = "your-domain.com" }
+]
+
+# Add your environment variables here
+# [vars]
+# SUPABASE_URL = "https://rbgrtarzbyiiqkzpygdo.supabase.co"
+# SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJiZ3J0YXJ6YnlpaXFrenB5Z2RvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIyMDAzMjAsImV4cCI6MjA0Nzc3NjMyMH0.tg1Aj6dUlmsSA6eFI-aqzF9wUFVhQL0u-UN9YxmwoZE" 
